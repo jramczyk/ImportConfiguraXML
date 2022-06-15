@@ -5,19 +5,18 @@ Controller  : UploadQuoteDataConfiguraXMLCtrl
 Description : VF page UploadQuoteDataConfiguraXML to upload the Configura XML to load the Quote Data
 *****************************************************************/ -->
 <apex:page standardController="Quote" extensions="UploadQuoteDataConfiguraXMLCtrl" lightningstylesheets="true">
-  <apex:form id="frm">
-    <apex:pageMessages ></apex:pageMessages>
-    <apex:pageBlock >
-    
-      <apex:pageBlockbuttons >
-        <apex:commandButton value="Upload" action="{!uploadXML}"/>
-        <apex:commandButton value="Cancel" action="{!cancel}"/>
-      </apex:pageBlockbuttons>
-      
-      <apex:pageBlockSection >
-          <apex:inputFile value="{!attchXML.body}" fileName="{!attchXML.name}" contentType="{!attchXML.contentType}" ></apex:inputFile>
-      </apex:pageBlockSection>
-    </apex:pageBlock>
-  </apex:form>
+    <apex:form id="frm">
+        <apex:pageMessages></apex:pageMessages>
+        <apex:pageBlock title="Import Configura XML">
+        <apex:outputText>Make sure that line items don't already exist! This will add additional line items to the quote!</apex:outputText>
+            <apex:pageBlockbuttons location="bottom">                
+                <apex:commandButton value="Upload" action="{!uploadXML}" onclick="this.onclick=function(){return false;}" id="upload_button"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>                
+            </apex:pageBlockbuttons>
+            <apex:pageBlockSection >
+                <apex:inputFile value="{!attchXML.body}" fileName="{!attchXML.name}" contentType="{!attchXML.contentType}" ></apex:inputFile>
+                <div id="display_status"></div>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
 </apex:page>
-                  
