@@ -1,0 +1,23 @@
+<!-- /****************************************************************
+Name        : UploadQuoteDataConfiguraXML
+Created Date: 12/15/2017
+Controller  : UploadQuoteDataConfiguraXMLCtrl
+Description : VF page UploadQuoteDataConfiguraXML to upload the Configura XML to load the Quote Data
+*****************************************************************/ -->
+<apex:page standardController="Quote" extensions="UploadQuoteDataConfiguraXMLCtrl" lightningstylesheets="true">
+  <apex:form id="frm">
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:pageBlock >
+    
+      <apex:pageBlockbuttons >
+        <apex:commandButton value="Upload" action="{!uploadXML}"/>
+        <apex:commandButton value="Cancel" action="{!cancel}"/>
+      </apex:pageBlockbuttons>
+      
+      <apex:pageBlockSection >
+          <apex:inputFile value="{!attchXML.body}" fileName="{!attchXML.name}" contentType="{!attchXML.contentType}" ></apex:inputFile>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>
+                  
