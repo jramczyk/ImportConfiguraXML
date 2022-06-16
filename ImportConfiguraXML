@@ -1,14 +1,14 @@
-<!-- /****************************************************************
+<!--*************************************************************************************************
 Name        : UploadQuoteDataConfiguraXML
 Created Date: 12/15/2017
 Controller  : UploadQuoteDataConfiguraXMLCtrl
 Description : VF page UploadQuoteDataConfiguraXML to upload the Configura XML to load the Quote Data
-*****************************************************************/ -->
+******************************************************************************************************-->
 <apex:page standardController="Quote" extensions="UploadQuoteDataConfiguraXMLCtrl" lightningstylesheets="true">
     <apex:form id="frm">
         <apex:pageMessages></apex:pageMessages>
         <apex:pageBlock title="Import Configura XML">
-        <apex:outputText>Make sure that line items don't already exist! This will add additional line items to the quote!</apex:outputText>
+        <apex:outputText>Make sure that line items do not already exist! This will add additional line items to the quote!</apex:outputText>
             <apex:pageBlockbuttons location="bottom">                
                 <apex:commandButton value="Upload" action="{!uploadXML}" onclick="this.onclick=function(){return false;}" id="upload_button"/>
                 <apex:commandButton value="Cancel" action="{!cancel}"/>                
